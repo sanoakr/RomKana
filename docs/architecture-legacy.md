@@ -222,7 +222,7 @@ convert_segments(segments, context)
 ## 9. ファイル一覧
 
 ```
-~/dev/romkana/
+romkana/
 ├── Sources/
 │   ├── main.swift               IMKServer 起動・登録の儀式
 │   ├── RomKanaController.swift   IMEの中核（入力/候補/確定/通信/学習/メニュー）

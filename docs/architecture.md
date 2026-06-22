@@ -259,7 +259,7 @@ swift build -c release            # SwiftPM（AzooKey + Zenzai trait, Cxx intero
 ## 10. ファイル一覧
 
 ```
-~/dev/romkana/
+romkana/
 ├── Sources/
 │   ├── main.swift               IMKServer 起動・入力ソース登録
 │   ├── RomKanaController.swift   IMEの中核（入力/変換/候補/確定/学習/辞書/設定/メニュー）

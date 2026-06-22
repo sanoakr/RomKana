@@ -33,7 +33,7 @@ RomKana.app (Swift / InputMethodKit, ~/Library/Input Methods/)
 ## 構成ファイル
 
 ```
-~/dev/romkana/
+romkana/
 ├── Sources/
 │   ├── main.swift               IMKServer 起動・入力ソース登録
 │   ├── RomKanaController.swift   IMKInputController: 入力/変換/候補/確定/学習/辞書/設定/メニュー
@@ -49,9 +49,9 @@ RomKana.app (Swift / InputMethodKit, ~/Library/Input Methods/)
 
 ## セットアップ / 使い方
 
-1. ビルド/インストール:
+1. ビルド/インストール（リポジトリ直下で実行。クローン先の場所は問わない）:
    ```
-   bash ~/dev/romkana/scripts/build_install.sh
+   bash scripts/build_install.sh
    ```
    （`swift build` → `~/Library/Input Methods/RomKana.app` に組立 → ad-hoc 署名 → reload。
    `llama.framework`・`Dictionary` フォルダ・zenz GGUF を同梱する。）

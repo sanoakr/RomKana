@@ -3,7 +3,9 @@
 # ~/Library/Input Methods with its resource bundles + zenz model, sign, reload.
 set -euo pipefail
 
-ROOT="$HOME/dev/romkana"
+# Repo root is derived from this script's own location (scripts/..), so the
+# project works wherever it is cloned — no hard-coded path.
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 APP="$HOME/Library/Input Methods/RomKana.app"
 GGUF="$ROOT/models/zenz-v3.2-small-gguf/ggml-model-Q5_K_M.gguf"
 

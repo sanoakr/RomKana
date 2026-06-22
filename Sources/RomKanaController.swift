@@ -310,14 +310,15 @@ final class RomKanaController: IMKInputController {
         pendingMemoryReset = false
 
         // mainResults mixes whole-sentence conversions with shorter clause/prefix
-        // candidates ("精度が", "精度", "セイド" …). Put the candidates that cover the
-        // ENTIRE input first (the real whole-sentence conversions), then the partials
-        // after as fallbacks — clean on top, but homophone alternatives still reachable.
+        // fragments ("制度が", "精度", "セイド" …). Keep ONLY candidates that cover the
+        // ENTIRE input, and drop the fragments — they are the "partial candidates"
+        // that otherwise clutter the list. Sentence-level homophone alternatives
+        // ("精度が…" vs "制度が…") are themselves full-coverage, so they survive.
         let inputCount = composing.input.count
         lastCandidates = result.mainResults
-        let fullText = result.mainResults.filter { $0.correspondingCount == inputCount }.map { $0.text }
-        let partText = result.mainResults.filter { $0.correspondingCount != inputCount }.map { $0.text }
-        var list = fullText + partText
+        var fullCands = result.mainResults.filter { $0.correspondingCount == inputCount }
+        if fullCands.isEmpty { fullCands = result.mainResults }  // safety net
+        var list = fullCands.map { $0.text }
         if list.isEmpty { list = [reading] }
         // Capitalized acronym typed without spaces (e.g. "API"): offer it verbatim
         // near the top so it isn't lost to lowercasing.

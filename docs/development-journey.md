@@ -129,7 +129,7 @@
 ## 8. なぜ作り直したか — zenz / Zenzai との出会い
 
 - クラウド生成（Sumibi 系）は賢いけれど、ネットが要ります。完全ローカルの方針は曲げたくありませんでした。
-- そこで見つけたのが **[zenz](https://huggingface.co/Miwa-Keita/zenz-v3.2-small-gguf)**（ensan さんのかな漢字変換特化モデル、CC-BY-SA）と、それを使う **[AzooKeyKanaKanjiConverter](https://github.com/azooKey/AzooKeyKanaKanjiConverter)**（純 Swift, MIT）です。**Zenzai** は [llama.cpp](https://github.com/ggml-org/llama.cpp) ＋ zenz の GGUF をローカルで回し、辞書変換の上に乗せて候補を賢く並べてくれます。
+- そこで見つけたのが **[zenz](https://huggingface.co/Miwa-Keita/zenz-v3.2-small-gguf)**（ensan さんのかな漢字変換特化モデル、Apache-2.0）と、それを使う **[AzooKeyKanaKanjiConverter](https://github.com/azooKey/AzooKeyKanaKanjiConverter)**（純 Swift, MIT）です。**Zenzai** は [llama.cpp](https://github.com/ggml-org/llama.cpp) ＋ zenz の GGUF をローカルで回し、辞書変換の上に乗せて候補を賢く並べてくれます。
 - 採用したのは **zenz-v3.2-small**（GPT-2系 char、約95M、量子化後で **70MB**）。旧構成の Qwen3-1.7B（~1.2GB）とは桁が違う軽さです。
 
 ## 9. 単一プロセスにする
@@ -194,8 +194,8 @@
 
 - [Sumibi](https://github.com/kiyoka/Sumibi)（kiyoka さん）— 着想のもと。ローマ字を LLM でかな漢字に変換する Emacs 入力メソッド。
 - [AzooKeyKanaKanjiConverter](https://github.com/azooKey/AzooKeyKanaKanjiConverter)（MIT, © Miwa / Ensan）— 現行の変換エンジン。
-- [zenz-v3.2-small-gguf](https://huggingface.co/Miwa-Keita/zenz-v3.2-small-gguf)（**CC-BY-SA-4.0**, © Miwa Keita / ensan）— Zenzai が使うかな漢字変換モデル。
+- [zenz-v3.2-small-gguf](https://huggingface.co/Miwa-Keita/zenz-v3.2-small-gguf)（**Apache-2.0**, © Miwa Keita / ensan）— Zenzai が使うかな漢字変換モデル。
 - [llama.cpp](https://github.com/ggml-org/llama.cpp)（MIT）— zenz を動かす推論ランタイム。
 - [mozcpy](https://pypi.org/project/mozcpy/) — 第1部（旧構成）で使った辞書変換。
 
-**ライセンスについて**: 配布する `.app` は上記のライセンス（MIT / BSD-2-Clause / Apache-2.0）に従って表示しています。とくに**同梱の zenz モデルは CC-BY-SA-4.0** で、著作者表示・継承（GGUF への量子化は改変として明示）が必要です。全文と一覧は [THIRD_PARTY_NOTICES.md](https://github.com/t10471/RomKana/blob/master/THIRD_PARTY_NOTICES.md) にまとめています。
+**ライセンスについて**: 配布する `.app` は上記のライセンス（MIT / BSD-2-Clause / Apache-2.0）に従って表示しています。同梱の zenz モデルも Apache-2.0（© Miwa Keita / ensan）で、GGUF への量子化＝改変を明示しています。全文と一覧は [THIRD_PARTY_NOTICES.md](https://github.com/t10471/RomKana/blob/master/THIRD_PARTY_NOTICES.md) にまとめています。

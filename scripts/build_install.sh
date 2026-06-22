@@ -37,10 +37,10 @@ cp -R "$DICT_BUNDLE/Dictionary" "$APP/Contents/Resources/Dictionary"
 cp "$GGUF" "$APP/Contents/Resources/ggml-model-Q5_K_M.gguf"
 
 # Ship our license + third-party attributions inside the bundle, so the
-# distributed .app carries the required notices (MIT/BSD/Apache + CC-BY-SA zenz).
+# distributed .app carries the required notices (MIT/BSD-2/Apache-2.0).
 cp "$ROOT/LICENSE" "$APP/Contents/Resources/LICENSE"
 cp "$ROOT/THIRD_PARTY_NOTICES.md" "$APP/Contents/Resources/THIRD_PARTY_NOTICES.md"
-cp -R "$ROOT/licenses" "$APP/Contents/Resources/licenses"   # full license texts (MIT/BSD/Apache/CC-BY-SA)
+cp -R "$ROOT/licenses" "$APP/Contents/Resources/licenses"   # full license texts (MIT/BSD-2/Apache-2.0)
 
 plutil -lint "$APP/Contents/Info.plist"
 

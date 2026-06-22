@@ -9,7 +9,7 @@ RomKana（`~/Library/Input Methods/RomKana.app`）は、以下の第三者の成
 | AzooKeyKanaKanjiConverter | 静的リンク | MIT | © 2023 Miwa / Ensan | https://github.com/azooKey/AzooKeyKanaKanjiConverter |
 | AzooKey 既定辞書（azooKey_dictionary_storage） | `Dictionary/` フォルダを同梱 | Apache-2.0 | © 2024 Miwa / ensan | （上記リポジトリに同梱） |
 | llama.cpp（`llama.framework`） | フレームワーク同梱 | MIT | © 2023 Georgi Gerganov and ggml authors | https://github.com/ggml-org/llama.cpp ／ ビルド: https://github.com/azooKey/llama.cpp release `b4846` |
-| zenz-v3.2-small（`ggml-model-Q5_K_M.gguf`） | モデルファイル同梱 | **CC-BY-SA-4.0** | © Miwa Keita (ensan) | https://huggingface.co/Miwa-Keita/zenz-v3.2-small-gguf |
+| zenz-v3.2-small（`ggml-model-Q5_K_M.gguf`） | モデルファイル同梱 | Apache-2.0 | © Miwa Keita (ensan) | https://huggingface.co/Miwa-Keita/zenz-v3.2-small-gguf |
 | SwiftyMarisa | 静的リンク | BSD-2-Clause（デュアルのうち選択。他に LGPL） | © 2016 Vladimir Solomenchuk | https://github.com/ensan-hcl/SwiftyMarisa （marisa-trie © 2010 Susumu Yata） |
 | Jinja | 静的リンク | MIT | © 2024 John Mai | https://github.com/maiqingqiang/Jinja |
 | swift-tokenizers | 静的リンク | Apache-2.0 | © Hugging Face | https://github.com/ensan-hcl/swift-tokenizers |
@@ -19,8 +19,8 @@ RomKana（`~/Library/Input Methods/RomKana.app`）は、以下の第三者の成
 
 ### 注記
 
-- **zenz モデルは CC-BY-SA-4.0** で、RomKana の MIT ライセンスには**含まれません**。同梱の `ggml-model-Q5_K_M.gguf` は、配布されているモデルを **GGUF 形式へ量子化（Q5_K_M）したもの**です（フォーマット変換＝改変にあたります）。CC-BY-SA-4.0 の条件（著作者表示・ライセンス継承・改変の明示）に従って再配布しています。基盤モデルは京都大学 NLP の `gpt2-small-japanese-char` 系です。
-- Apache-2.0 の成果物（辞書・swift-* 各種）は**未改変**で同梱しています。
+- **zenz モデルは Apache-2.0**（HF リポジトリ [`Miwa-Keita/zenz-v3.2-small-gguf`](https://huggingface.co/Miwa-Keita/zenz-v3.2-small-gguf) の表示）。同梱の `ggml-model-Q5_K_M.gguf` は、配布モデルを **GGUF 形式へ量子化（Q5_K_M）したもの**＝改変にあたるため、その旨をここに明示します（Apache-2.0 §4(b)）。基盤モデルは京都大学 NLP の `gpt2-small-japanese-char` 系です。
+- Apache-2.0 の成果物（zenz モデル・AzooKey 既定辞書・swift-* 各種）のうち、zenz 以外は**未改変**で同梱しています。
 
 ---
 
@@ -33,7 +33,6 @@ RomKana（`~/Library/Input Methods/RomKana.app`）は、以下の第三者の成
 | MIT | [`licenses/MIT.txt`](licenses/MIT.txt) |
 | BSD-2-Clause | [`licenses/BSD-2-Clause.txt`](licenses/BSD-2-Clause.txt) |
 | Apache-2.0 | [`licenses/Apache-2.0.txt`](licenses/Apache-2.0.txt) |
-| CC-BY-SA-4.0 | [`licenses/CC-BY-SA-4.0.txt`](licenses/CC-BY-SA-4.0.txt) |
 
 以下は各ライセンスの要約・著作権表示です（全文は上記ファイル）。
 
@@ -98,11 +97,12 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 ```
 
-### Apache License 2.0（AzooKey 既定辞書, swift-tokenizers, swift-collections, swift-numerics, swift-algorithms に適用）
+### Apache License 2.0（zenz モデル, AzooKey 既定辞書, swift-tokenizers, swift-collections, swift-numerics, swift-algorithms に適用）
 
 これらの成果物は Apache License, Version 2.0 の下で配布されています。全文は次を参照してください: https://www.apache.org/licenses/LICENSE-2.0
 
 ```
+Copyright Miwa Keita (ensan)           (zenz-v3.2-small-gguf)
 Copyright 2024 Miwa / ensan            (azooKey_dictionary_storage)
 Copyright Hugging Face                 (swift-tokenizers)
 Copyright Apple Inc. and the Swift project authors  (swift-collections / swift-numerics / swift-algorithms)
@@ -119,12 +119,3 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ```
-
-### CC-BY-SA-4.0（zenz モデル `ggml-model-Q5_K_M.gguf` に適用）
-
-- **作品**: zenz-v3.2-small（かな漢字変換ニューラルモデル）
-- **作者**: Miwa Keita (ensan)
-- **ライセンス**: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
-- **全文**: https://creativecommons.org/licenses/by-sa/4.0/legalcode
-- **概要**: https://creativecommons.org/licenses/by-sa/4.0/
-- **改変**: 配布モデルを GGUF 形式へ量子化（Q5_K_M）。改変版も同ライセンス（CC-BY-SA-4.0）で配布します。

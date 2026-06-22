@@ -23,7 +23,7 @@ SOFTWARE.
 ---
 
 This product bundles and links third-party components under their own licenses
-(MIT, BSD-2-Clause, Apache-2.0) and ships a neural model under CC-BY-SA-4.0.
-See THIRD_PARTY_NOTICES.md for the full list, copyrights, and license texts.
-The bundled zenz model file (ggml-model-Q5_K_M.gguf) is licensed CC-BY-SA-4.0
-and is NOT covered by the MIT license above.
+(MIT, BSD-2-Clause, Apache-2.0). The bundled zenz model file
+(ggml-model-Q5_K_M.gguf) is licensed Apache-2.0 (by Miwa Keita / ensan) and is
+NOT covered by the MIT license above. See THIRD_PARTY_NOTICES.md for the full
+list, copyrights, and license texts.
